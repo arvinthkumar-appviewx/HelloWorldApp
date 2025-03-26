@@ -10,6 +10,7 @@ permissions:
   id-token: write         # ✅ Required for attestation
   contents: read          # ✅ Required to read repo contents
   security-events: write  # ✅ Required to persist attestation
+  attestations: write
 
 jobs:
   build:
