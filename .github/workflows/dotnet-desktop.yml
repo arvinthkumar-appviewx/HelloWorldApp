@@ -1,4 +1,4 @@
-name: Build .NET Project
+name: Build .NET Project with Attestation
 
 on:
   push:
@@ -30,3 +30,9 @@ jobs:
       with:
         name: HelloWorldApp
         path: HelloWorldApp/bin/Release/net8.0/
+
+    # ✅ Attestation for Build Provenance (SLSA)
+    - name: Generate Build Attestation
+      uses: actions/attest-build-provenance@v1
+      with:
+        subject-path: HelloWorldApp/bin/Release/net8.0/
