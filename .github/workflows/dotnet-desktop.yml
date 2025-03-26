@@ -6,6 +6,10 @@ on:
       - main
   pull_request:
 
+permissions:
+  id-token: write  # ✅ This enables OIDC token access
+  contents: read   # Required for attestation action
+
 jobs:
   build:
     runs-on: ubuntu-latest
